@@ -25,8 +25,10 @@ public class PeopleService {
         return peopleRepository.findAll();
     }
 
-    public Optional<Person> findOne(int id) {
-        return peopleRepository.findById(id);
+
+    public Person findOne(int id) {
+        Optional<Person> foundPerson = peopleRepository.findById(id);
+        return foundPerson.orElse(null);
     }
 
     @Transactional

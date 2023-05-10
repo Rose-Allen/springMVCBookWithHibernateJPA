@@ -24,8 +24,9 @@ public class BooksService {
         return booksRepository.findAll();
     }
 
-    public Optional<Book> findOne(int id) {
-        return booksRepository.findById(id);
+    public Book findOne(int id) {
+        Optional<Book> foundBook = booksRepository.findById(id);
+        return foundBook.orElse(null);
     }
 
     @Transactional

@@ -36,7 +36,7 @@ public class BooksController {
     }
 
     @GetMapping("/{id}")
-    public String show(@PathVariable("id") int id, Model model, @ModelAttribute("person") Person person) {
+    public String show(@PathVariable("id") int id, Model model, @ModelAttribute("book") Book book) {
         model.addAttribute("book", booksService.findOne(id));
 
 
